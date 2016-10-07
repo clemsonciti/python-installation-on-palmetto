@@ -22,7 +22,7 @@ is **2.6.6**. This is the version of Python that
 ships with the operating system running on Palmetto
 (currently Scientific Linux release 6.7).
 
-```python
+```bash
 $ module list
 No Modulefiles Currently Loaded.
 
