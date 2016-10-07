@@ -1,6 +1,6 @@
 # Managing Python Installations on the Palmetto Cluster
 
-This article is for anyone using Python and Python libraries
+This article is for anyone using Python and Python packages
 on the Palmetto cluster.
 It aims to explain the different options
 for managing Python installations
@@ -8,11 +8,21 @@ on the Palmetto Cluster.
 A "Python installation" is defined as:
 
 * Some version of Python, and
-* Python libraries for this version
+* Python packages for this version
 
-It also aims to clear up some common points of confusion,
-such as the difference between "Python" and "Anaconda",
-and what exactly `pip install` does.
+Note that, in this context, a Python "package"
+is a bundle of software to be installed.
+Python libraries such as `numpy`
+are distributed as packages;
+and the first step towards using these libraries
+is to install the corresponding packages.
+
+This also aims to clear up some common points of confusion,
+such as:
+
+* what is the difference between "Python" and "Anaconda",
+* where Python looks for installed packages,
+* what exactly is `pip`
 
 ## The default (system) Python
 
@@ -42,7 +52,7 @@ run their own applications:
 of Python (generally, 2.7 or higher).
 
 2. The system version of Python may change.
-Any applications or libraries that users
+Any applications or packages that users
 may build using the system Python
 will likely not run if this happens.
 
@@ -84,20 +94,66 @@ Using modules
 allows users to easily change the
 version of Python from the system Python.
 With modules,
-users can install libraries and applications
-that depend on different version of Python than 2.6.6.
-Users can also maintain libraries
-separately for Python 2 and Python 3,
+users can install packages and applications
+that depend on different versions of Python than 2.6.6.
+Users can also maintain packages
+separately for Python 2 and Python 3;
 for example,
-a version of the `numpy` library for Python 2,
-and another version of `numpy` for Python 3.
+a version of the `numpy` package  for Python 2,
+and another version of `numpy` package for Python 3.
 
-**Caution**: later in this article,
-we will see how it is generally a bad idea for users
-to try and compile Python libraries such as `numpy` by themselves.
+## Installing Python packages
+
+Running the correct version of Python is the first step
+towards successfully running your application.
+Installing the required packages (and their dependencies)
+is the next step.
+How you install a Python package depends
+on how the package is distributed,
+and what options it provides for installation.
+
+A large number
+packages can be installed in one of the following ways
+on the Palmetto cluster:
+
+1. Using `pip` to install the package and its dependencies automatically
+3. Using `conda` to install the package and its dependencies automatically
+2. Building the package and its dependencies yourself
+
+Several packages will provide the option
+to install in more than one way.
+For example, see the [installation instructions
+for the `mpi4py` package][mpi4py-install],
+which can be installed either using `pip`,
+or by downloading and building from source.
+
+### Using pip
+
+Whenever possible, you should try to use `pip`
+to install Python packages,
+as it correctly installs any Python dependencies
+that your project may have.
+
+Unfortunately,
+`pip` is generally not well suited for installing scientific software packages
+like `numpy` or `matplotlib`.
+This is because (as explained in [this][python-packaging-science] article),
+"scientific software tends to have more complex dependencies than most,
+and it will often have multiple build options to take advantage of different kinds of hardware,
+or to interoperate with different pieces of external software."
+This makes it difficult to distribute pre-built versions of NumPy,
+as "most users aren’t going to know which version they need,
+and current Python installation tools cannot make that decision on the
+user’s behalf at install time."
+
+### Building the package yourself
+
+### Using conda
 
 ## The Anaconda modules
 
-## Using `pip` to install Python packages
-
 ## Using `conda` to manage Python environments
+
+
+[mpi4py-install]: https://mpi4py.scipy.org/docs/usrman/install.html
+[python-packaging-science]: https://packaging.python.org/science/
