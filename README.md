@@ -129,11 +129,40 @@ or by downloading and building from source.
 
 ### Using pip
 
+To install a package using `pip`,
+simply run the following command:
+
+```bash
+$ pip install package-name --user
+```
+
+For example,
+to install the [Cython](http://cython.org/) package using `pip`::
+
+```bash
+$ pip install cython --user
+
+Collecting cython
+  Downloading Cython-0.24.1-cp35-cp35m-manylinux1_x86_64.whl (6.5MB)
+      100% |████████████████████████████████| 6.5MB 119kB/s
+      Installing collected packages: cython
+      Successfully installed cython-0.24.1
+```
+
+this installs the package in your home directory
+(in `/home/username/.local/lib/pythonX.Y/site-packages`).
+Here, `pythonX.Y` is the specific version of Python that is used
+when performing the `pip install` (for example `python3.5`).
+This installed version of Cython will only be used
+by Python 3.5.
+For any other version of Python (for examle, Python 2.7),
+this version of Cython will *not* be used,
+you will have to do a separate `pip install`.
+
 Whenever possible, you should try to use `pip`
 to install Python packages,
 as it correctly installs any Python dependencies
-that your project may have.
-
+that the package may have.
 Unfortunately,
 `pip` is generally not well suited for installing scientific software packages
 like `numpy` or `matplotlib`.
@@ -145,6 +174,11 @@ This makes it difficult to distribute pre-built versions of NumPy,
 as "most users aren’t going to know which version they need,
 and current Python installation tools cannot make that decision on the
 user’s behalf at install time."
+
+In this case,
+two available options are to
+build the package yourself,
+or to use the `conda` package manager to install the package.
 
 ### Building the package yourself
 
