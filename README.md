@@ -31,8 +31,6 @@ $ which python
 
 $ python --version
 Python 2.6.6
-
-$ python
 ```
 
 In general,
@@ -50,6 +48,53 @@ will likely not run if this happens.
 
 ## The Python modules
 
+In addition to the default, system Python,
+the Palmetto cluster enables users to
+load different versions of Python as modules:
+
+```bash
+$ module avail python
+
+------------------------- /software/modulefiles -------------------------
+python/2.7.6 python/3.3.3 python/3.4
+```
+
+When any of these modules is added,
+the version of Python used changes.
+For example, here is the effect of adding
+the `python/3.4` module:
+
+```bash
+$ module list
+No Modulefiles Currently Loaded.
+
+$ python --version
+Python 2.6.6
+
+$ module add python/3.4
+
+$ python --version
+Python 3.4.2
+
+$ which python
+/software/python/3.4/bin/python
+```
+
+Using modules
+allows users to easily change the
+version of Python from the system Python.
+With modules,
+users can install libraries and applications
+that depend on different version of Python than 2.6.6.
+Users can also maintain libraries
+separately for Python 2 and Python 3,
+for example,
+a version of the `numpy` library for Python 2,
+and another version of `numpy` for Python 3.
+
+**Caution**: later in this article,
+we will see how it is generally a bad idea for users
+to try and compile Python libraries such as `numpy` by themselves.
 
 ## The Anaconda modules
 
