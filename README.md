@@ -1,16 +1,15 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
 
 - [Managing Python Installations on the Palmetto Cluster](#managing-python-installations-on-the-palmetto-cluster)
   - [The default (system) Python](#the-default-system-python)
   - [The Python modules](#the-python-modules)
   - [The Anaconda modules](#the-anaconda-modules)
   - [Installing Python packages](#installing-python-packages)
-    - [Using pip](#using-pip)
+    - [Using pip to install packages and dependencies](#using-pip-to-install-packages-and-dependencies)
     - [Building the package yourself](#building-the-package-yourself)
-    - [Using conda](#using-conda)
-  - [The Anaconda modules](#the-anaconda-modules-1)
+    - [Using conda to install the package and dependencies](#using-conda-to-install-the-package-and-dependencies)
   - [Using `conda` to manage Python environments](#using-conda-to-manage-python-environments)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -34,12 +33,34 @@ are distributed as packages;
 and the first step towards using these libraries
 is to install the corresponding packages.
 
-This also aims to clear up some common points of confusion,
-such as:
+Many users face problems with Python package management
+on the Palmetto cluster, and for several reasons such as:
 
-* what is the difference between "Python" and "Anaconda",
-* where Python looks for installed packages,
-* what exactly is `pip`
+1. Many setup instructions for different packages
+assume "root" or administrative access.
+
+2. Many packages have several dependencies that
+may be difficult to install.
+
+3. Users may run several versions of Python:
+    * the built-in Python (version 2.6.6)
+    * using the Python modules (version 2.7 and 3.4)
+    * using the Anaconda modules (version 2.7 and 3.5)
+..and may find it difficult to install and manage
+packages across all these different Python versions.
+
+This article will aim to explain
+
+- how to use tools such as `pip` to install Python packages
+(and automatically install their dependencies),
+
+- how to leverage Python distributions like "Anaconda"
+which come with several importand Python packages
+pre-installed, thus removing the burden of manually installing them.
+
+- how to use the `conda` package manager to easily create
+isolated Python installations - each with its own version
+of Python, and its own set of libraries
 
 ## The default (system) Python
 
@@ -151,14 +172,15 @@ of manually installing these packages from source.
 Once the Anaconda module is loaded,
 importing these packages "just works":
 
-```
+```bash
 $ module add anaconda3/2.5.0
 $ python
 Python 3.5.2 |Anaconda 2.5.0 (64-bit)| (default, Jul  2 2016, 17:53:06)
 [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import tables
->>>
+>>> tables.__file__     # prints where the tables module is loaded from
+'/software/anaconda3/2.5.0/lib/python3.5/site-packages/tables/__init__.py'
 ```
 
 Importantly, Anaconda provides the `conda` package manager,
@@ -166,10 +188,11 @@ which will be discussed later in this article.
 
 ## Installing Python packages
 
-Running the correct version of Python is the first step
-towards successfully running your application.
-Installing the required packages (and their dependencies)
-is the next step.
+While the provided Python and Anaconda modules
+have several important Python packages installed and ready
+for importing,
+you will often find that you may need to install addditional packages,
+or different versions of already available packages.
 How you install a Python package depends
 on how the package is distributed,
 and what options it provides for installation.
@@ -178,8 +201,8 @@ A large number
 packages can be installed in one of the following ways
 on the Palmetto cluster:
 
-1. Using `pip` to install the package and its dependencies automatically
-3. Using `conda` to install the package and its dependencies automatically
+1. Using `pip` to install/upgrade the package and its dependencies automatically
+3. Using `conda` to install/upgrade the package and its dependencies automatically
 2. Building the package and its dependencies yourself
 
 Several packages will provide the option
@@ -189,7 +212,7 @@ for the `mpi4py` package][mpi4py-install],
 which can be installed either using `pip`,
 or by downloading and building from source.
 
-### Using pip
+### Using pip to install packages and dependencies
 
 To install a package using `pip`,
 simply run the following command:
@@ -238,12 +261,9 @@ such as `numpy` and `matplotlib`.
 
 ### Building the package yourself
 
-### Using conda
-
-## The Anaconda modules
+### Using conda to install the package and dependencies
 
 ## Using `conda` to manage Python environments
-
 
 [mpi4py-install]: https://mpi4py.scipy.org/docs/usrman/install.html
 [python-packaging-science]: https://packaging.python.org/science/
