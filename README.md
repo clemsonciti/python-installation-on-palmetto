@@ -46,6 +46,7 @@ may be difficult to install.
     * the built-in Python (version 2.6.6)
     * using the Python modules (version 2.7 and 3.4)
     * using the Anaconda modules (version 2.7 and 3.5)
+
 ..and may find it difficult to install and manage
 packages across all these different Python versions.
 
