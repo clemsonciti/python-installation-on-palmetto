@@ -9,7 +9,7 @@
     - [Anaconda modules](#anaconda-modules)
     - [Which Python should I use?](#which-python-should-i-use)
   - [Installing Python packages](#installing-python-packages)
-    - [Using pip to install packages and dependencies](#using-pip-to-install-packages-and-dependencies)
+    - [Using `pip` to install packages and dependencies](#using-pip-to-install-packages-and-dependencies)
     - [Building the package yourself](#building-the-package-yourself)
   - [The `conda` package manager](#the-conda-package-manager)
     - [Creating an environment](#creating-an-environment)
@@ -206,7 +206,7 @@ or build *all* packages yourself.
 Your setup can contain several packages,
 and each one may be installed in any of the above ways.
 
-### Using pip to install packages and dependencies
+### Using `pip` to install packages and dependencies
 
 `pip` is a program that installs Python packages,
 and automatically installs any other Python packages
