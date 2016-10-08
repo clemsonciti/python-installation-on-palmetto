@@ -3,14 +3,17 @@
 
 
 - [Managing Python Installations on the Palmetto Cluster](#managing-python-installations-on-the-palmetto-cluster)
-  - [The default (system) Python](#the-default-system-python)
-  - [The Python modules](#the-python-modules)
-  - [The Anaconda modules](#the-anaconda-modules)
+  - [Python versions available on Palmetto Cluster](#python-versions-available-on-palmetto-cluster)
+    - [The default (system) Python](#the-default-system-python)
+    - [Python modules](#python-modules)
+  - [Anaconda modules](#anaconda-modules)
   - [Installing Python packages](#installing-python-packages)
     - [Using pip to install packages and dependencies](#using-pip-to-install-packages-and-dependencies)
     - [Building the package yourself](#building-the-package-yourself)
-    - [Using conda to install the package and dependencies](#using-conda-to-install-the-package-and-dependencies)
   - [Using `conda` to manage Python environments](#using-conda-to-manage-python-environments)
+    - [Creating an environment](#creating-an-environment)
+    - [Installing packages in an environment](#installing-packages-in-an-environment)
+    - [Cloning an existing environment](#cloning-an-existing-environment)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -61,9 +64,24 @@ pre-installed, thus removing the burden of manually installing them.
 
 - how to use the `conda` package manager to easily create
 isolated Python installations - each with its own version
-of Python, and its own set of libraries
+of Python, and its own set of libraries.
+This is the most reliable and efficient way to manage
+Python installations,
+and users are encouraged to adopt this approach.
 
-## The default (system) Python
+## Python versions available on Palmetto Cluster
+
+One of the first points of confusion
+for many users may be about
+the different versions of Python available on the Palmetto cluster.
+Currently,
+the versions of Python used by the community
+are either **2.X.Y** (for example, 2.7.6)
+or **3.X.Y** (for example, 3.5.2).
+The Palmetto cluster makes many versions of Python available,
+and we will begin by enumerating them:
+
+### The default (system) Python
 
 The "default" version of Python on the Palmetto cluster
 (also known as the *system* Python),
@@ -95,9 +113,9 @@ Any applications or packages that users
 may build using the system Python
 will likely not run if this happens.
 
-## The Python modules
+### Python modules
 
-In addition to the default, system Python,
+In addition to the default system Python,
 the Palmetto cluster enables users to
 load different versions of Python as modules:
 
@@ -141,11 +159,12 @@ for example,
 a version of the `numpy` package  for Python 2,
 and another version of `numpy` package for Python 3.
 
-## The Anaconda modules
+## Anaconda modules
 
-In addition to the Python modules,
-there are also several "Anaconda" modules
-available on the cluster:
+There are also several "Anaconda" modules
+available on the cluster.
+Loading one of the "Anaconda" modules
+also loads a different version of Python:
 
 ```bash
 $ module avail anaconda
@@ -202,9 +221,9 @@ A large number
 packages can be installed in one of the following ways
 on the Palmetto cluster:
 
-1. Using `pip` to install/upgrade the package and its dependencies automatically
-3. Using `conda` to install/upgrade the package and its dependencies automatically
+1. Using the `pip` package manager to install/upgrade the package and its dependencies automatically
 2. Building the package and its dependencies yourself
+3. Using the `conda` package manager to install/upgrade the package and its dependencies automatically
 
 Several packages will provide the option
 to install in more than one way.
@@ -213,37 +232,31 @@ for the `mpi4py` package][mpi4py-install],
 which can be installed either using `pip`,
 or by downloading and building from source.
 
+It is not necessary that you install *all* packages
+using `pip`,
+or build *all* packages yourself.
+Your setup can contain several packages,
+and each one may be installed in any of the above ways.
+
 ### Using pip to install packages and dependencies
 
 To install a package using `pip`,
-simply run the following command:
+you should first have `pip` installed
+for whatever version of Python you are running.
+All the provided Python and Anaconda modules already come with `pip`.
+If `pip` is installed,
+you can install the package using the command:
+
 
 ```bash
 $ pip install package-name --user
 ```
 
-For example,
-to install the [Cython](http://cython.org/) package using `pip`::
+The `--user` switch ensures that the package is installed
+into your home directory, and not into the `/usr/local` directory.
 
-```bash
-$ pip install cython --user
-
-Collecting cython
-  Downloading Cython-0.24.1-cp35-cp35m-manylinux1_x86_64.whl (6.5MB)
-      100% |████████████████████████████████| 6.5MB 119kB/s
-      Installing collected packages: cython
-      Successfully installed cython-0.24.1
-```
-
-this installs the package in your home directory
-(in `/home/username/.local/lib/pythonX.Y/site-packages`).
-Here, `pythonX.Y` is the specific version of Python that is used
-when performing the `pip install` (for example `python3.5`).
-This installed version of Cython will only be used
-by Python 3.5.
-For any other version of Python (for examle, Python 2.7),
-this version of Cython will *not* be used,
-you will have to do a separate `pip install`.
+This will only install the package
+for the currently running version of Python.
 
 Whenever possible, you should try to use `pip`
 to install Python packages,
@@ -257,14 +270,48 @@ the available options are to
 build the package yourself,
 use the `conda` package manager to install the package,
 or to use a Python distribution like Anaconda,
-which comes pre-installed with scientific and data analysis libraries
-such as `numpy` and `matplotlib`.
+which comes pre-installed with scientific and data analysis libraries.
 
 ### Building the package yourself
 
-### Using conda to install the package and dependencies
+When packages cannot be installed via pip
+or when you want a package to be built in a specific way,
+e.g., linked against specific libraries,
+you may need to build the package for yourself.
+
+In general,
+dependencies are *not* automatically installed
+when you manually build a pacakge.
+Thus, you may need to ensure that the dependencies
+are available before attempting to build a package.
+
+The instructions for building a package are generally
+a part of the package's documentation.
+Many packages are built using the following two commands:
+
+```
+$ python setup.py build
+$ python setup.py install --user
+```
+
+The `--user` switch ensures that the package is installed
+into your home directory, and not into the `/usr/local` directory.
+This will only install the package
+for the currently running version of Python.
 
 ## Using `conda` to manage Python environments
+
+`conda` is a package manager similar to `pip`,
+but with two major improvements over `pip`:
+
+1. `conda` also installs non-Python packages and dependencies
+such as `gcc`, MKL, or HDF5.
+
+2. `conda` also serves 
+
+### Creating an environment
+### Installing packages in an environment
+### Cloning an existing environment
 
 [mpi4py-install]: https://mpi4py.scipy.org/docs/usrman/install.html
 [python-packaging-science]: https://packaging.python.org/science/
