@@ -2,7 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [Managing Python Installations on the Palmetto Cluster](#managing-python-installations-on-the-palmetto-cluster)
+- [Installing Python and Python packages on Palmetto Cluster](#installing-python-and-python-packages-on-palmetto-cluster)
   - [Python versions available on Palmetto Cluster](#python-versions-available-on-palmetto-cluster)
     - [The default (system) Python](#the-default-system-python)
     - [Python modules](#python-modules)
