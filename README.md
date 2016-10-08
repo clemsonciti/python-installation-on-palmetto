@@ -23,6 +23,7 @@ This article is for anyone using Python and Python packages
 on the Palmetto cluster.
 It aims to explain the different options
 for installing Python and Python packages on the cluster.
+
 As an example,
 consider the scenario of a user working on two Python projects,
 each project has different requirements:
@@ -30,23 +31,19 @@ each project has different requirements:
 <img src="img/python-envs.png" width=600px">
 
 The first project requires
-Python 2.7 and a set of Python packages such as `numpy`
+Python 2.7 and a set of Python packages such as `numpy`.
+The second package requires Python 3.4,
+and a different set of Python packages.
 
-This article will aim to explain
+This article will explain how users
+can correctly set up Python and the required Packages
+for such projects.
+In particular, this article will cover:
 
-- how to use tools such as `pip` to install Python packages
-(and automatically install their dependencies),
-
-- how to leverage Python distributions like "Anaconda"
-which come with several important Python packages
-pre-installed, thus removing the burden of manually installing them.
-
-- how to use the `conda` package manager to easily create
-isolated Python installations - each with its own version
-of Python, and its own set of packages.
-This is the most reliable and efficient way to manage
-Python installations,
-and users are encouraged to adopt this approach.
+* All the available versions of Python on the cluster
+* The different ways for users to install Python packages
+* How to use the `conda` package manager to
+install and maintain packages separately for each project.
 
 ## Python versions available on Palmetto Cluster
 
@@ -138,7 +135,7 @@ for example,
 a version of the `numpy` package  for Python 2,
 and another version of `numpy` package for Python 3.
 
-## Anaconda modules
+### Anaconda modules
 
 There are also several "Anaconda" modules
 available on the cluster.
@@ -181,7 +178,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> tables.__file__     # prints where the tables module is loaded from
 '/software/anaconda3/2.5.0/lib/python3.5/site-packages/tables/__init__.py'
 ```
-
 Importantly, Anaconda provides the `conda` package manager,
 which will be discussed later in this article.
 
