@@ -265,7 +265,7 @@ A `conda` environment is a directory
 containing a specific version of Python
 and a collection of packages for this version of Python.
 
-`conda` is available as part of any of the `anconda` modules.
+`conda` is available as part of any of the `anaconda` modules.
 
 ### Creating an environment
 
@@ -371,7 +371,7 @@ see the official `conda` documentation [here][conda-docs].
 ### Using `conda` environments per-project
 
 Looking back at our example problem
-of having multiple projects with deferent requirements:
+of having multiple projects with different requirements:
 
 <img src="img/python-envs.png" width=400px">
 
