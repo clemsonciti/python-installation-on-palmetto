@@ -6,7 +6,7 @@
   - [Python versions available on Palmetto Cluster](#python-versions-available-on-palmetto-cluster)
     - [The default (system) Python](#the-default-system-python)
     - [Python modules](#python-modules)
-  - [Anaconda modules](#anaconda-modules)
+    - [Anaconda modules](#anaconda-modules)
   - [Installing Python packages](#installing-python-packages)
     - [Using pip to install packages and dependencies](#using-pip-to-install-packages-and-dependencies)
     - [Building the package yourself](#building-the-package-yourself)
