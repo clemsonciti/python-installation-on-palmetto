@@ -23,7 +23,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Managing Python Installations on the Palmetto Cluster
+# Installing Python and Python packages on Palmetto Cluster
 
 This article is for anyone using Python and Python packages
 on the Palmetto cluster.
