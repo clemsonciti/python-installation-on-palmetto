@@ -7,13 +7,19 @@
     - [The default (system) Python](#the-default-system-python)
     - [Python modules](#python-modules)
     - [Anaconda modules](#anaconda-modules)
+    - [Which Python should I use?](#which-python-should-i-use)
   - [Installing Python packages](#installing-python-packages)
     - [Using pip to install packages and dependencies](#using-pip-to-install-packages-and-dependencies)
     - [Building the package yourself](#building-the-package-yourself)
-  - [Using `conda` to manage Python environments](#using-conda-to-manage-python-environments)
+  - [The `conda` package manager](#the-conda-package-manager)
     - [Creating an environment](#creating-an-environment)
     - [Installing packages in an environment](#installing-packages-in-an-environment)
+      - [Using `conda install`](#using-conda-install)
+      - [Using `pip`](#using-pip)
+      - [By building it yourself:](#by-building-it-yourself)
     - [Cloning an existing environment](#cloning-an-existing-environment)
+    - [`conda` documentation](#conda-documentation)
+    - [Using `conda` environments per-project](#using-conda-environments-per-project)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
