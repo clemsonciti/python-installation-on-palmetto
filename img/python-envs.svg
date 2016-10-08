@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="python-envs.svg"
+   inkscape:export-filename="/Users/ashwin/python-envs.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.81323531"
+     inkscape:cx="658.35126"
+     inkscape:cy="539.01517"
+     inkscape:document-units="px"
+     inkscape:current-layer="g4246-6"
+     showgrid="false"
+     inkscape:window-width="1238"
+     inkscape:window-height="755"
+     inkscape:window-x="42"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3336" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4188"
+       style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+         id="flowRegion4190"><rect
+           id="rect4192"
+           width="184"
+           height="131"
+           x="110"
+           y="419.36221"
+           style="font-size:22.5px" /></flowRegion><flowPara
+         id="flowPara4194" /></flowRoot>    <g
+       id="g3767"
+       transform="matrix(1.4356182,0,0,1.4356182,17.300257,-3.4209012)">
+      <rect
+         transform="scale(1,-1)"
+         ry="53"
+         y="-574.24084"
+         x="100.32233"
+         height="220"
+         width="220"
+         id="rect3338"
+         style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <g
+         transform="translate(0,2.4985019)"
+         id="g4246">
+        <flowRoot
+           xml:space="preserve"
+           id="flowRoot4180"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           transform="translate(-13.44878,-254)"><flowRegion
+             id="flowRegion4182"><rect
+               id="rect4184"
+               width="194.63782"
+               height="38.414215"
+               x="142"
+               y="623.36218" /></flowRegion><flowPara
+             id="flowPara4186"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;font-family:Monospace;-inkscape-font-specification:Monospace">Python 2.7</flowPara></flowRoot>        <flowRoot
+           xml:space="preserve"
+           id="flowRoot4196"
+           style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           transform="translate(-162.63456,-217.78889)"><flowRegion
+             id="flowRegion4198"><rect
+               id="rect4200"
+               width="170"
+               height="76.5"
+               x="281"
+               y="649.36218"
+               style="font-size:20px" /></flowRegion><flowPara
+             id="flowPara4202"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace">numpy=1.10</flowPara><flowPara
+             id="flowPara4204"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace">matplotlib=1.53</flowPara><flowPara
+             id="flowPara4210"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace">mpi4py=2.0.1a0</flowPara><flowPara
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace"
+             id="flowPara3787">ipython=4.2.0</flowPara><flowPara
+             id="flowPara4208"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace" /><flowPara
+             id="flowPara4206"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace" /></flowRoot>        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="191.62593"
+           y="399.83511"
+           id="text3783"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3785"
+             x="191.62593"
+             y="399.83511" /></text>
+      </g>
+    </g>
+    <g
+       id="g3751"
+       transform="matrix(1.4356182,0,0,1.4356182,-73.236573,-215.82589)">
+      <rect
+         transform="scale(1,-1)"
+         ry="53"
+         y="-722.19452"
+         x="456.42661"
+         height="220"
+         width="220"
+         id="rect3338-0"
+         style="fill:#55ddff;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <g
+         transform="translate(356.10427,150.45215)"
+         id="g4246-6">
+        <flowRoot
+           xml:space="preserve"
+           id="flowRoot4180-7"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           transform="translate(-13.44878,-254)"><flowRegion
+             id="flowRegion4182-4"><rect
+               id="rect4184-8"
+               width="166"
+               height="37"
+               x="142"
+               y="623.36218" /></flowRegion><flowPara
+             id="flowPara4186-4"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25px;font-family:Monospace;-inkscape-font-specification:Monospace">Python 3.4</flowPara></flowRoot>        <flowRoot
+           xml:space="preserve"
+           id="flowRoot4196-5"
+           style="font-style:normal;font-weight:normal;font-size:20px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           transform="translate(-162.63456,-217.78889)"><flowRegion
+             id="flowRegion4198-2"><rect
+               id="rect4200-7"
+               width="170"
+               height="76.5"
+               x="281"
+               y="649.36218"
+               style="font-size:20px" /></flowRegion><flowPara
+             id="flowPara4202-3"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace">numpy=1.11</flowPara><flowPara
+             id="flowPara4210-9"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace">matplotlib=1.53</flowPara><flowPara
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace"
+             id="flowPara3789">ipython=5.0.0</flowPara><flowPara
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace"
+             id="flowPara3577">pycuda=2016.1.2</flowPara><flowPara
+             id="flowPara4208-3"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace" /><flowPara
+             id="flowPara4206-1"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Monospace;-inkscape-font-specification:Monospace" /></flowRoot>      </g>
+    </g>
+  </g>
+</svg>

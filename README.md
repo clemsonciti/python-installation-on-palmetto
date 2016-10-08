@@ -27,7 +27,10 @@ As an example,
 consider the scenario of a user working on two Python projects,
 each project has different requirements:
 
-<img src="img/python-envs.png" width=200px">
+<img src="img/python-envs.png" width=600px">
+
+The first project requires
+Python 2.7 and a set of Python packages such as `numpy`
 
 This article will aim to explain
 
