@@ -304,9 +304,12 @@ $
 
 ### Installing packages in an environment
 
-From within an environment,
-any packages you install will be available only
-within that environment.
+A newly created `conda` environment
+contains a few core packages,
+but in general, you will have to install
+whatever packages you need inside this environment.
+Any packages you install will be available only
+within the environment.
 
 #### Using `conda install`
 
