@@ -22,36 +22,12 @@
 This article is for anyone using Python and Python packages
 on the Palmetto cluster.
 It aims to explain the different options
-for managing Python installations
-on the Palmetto Cluster.
-A "Python installation" is defined as:
+for installing Python and Python packages on the cluster.
+As an example,
+consider the scenario of a user working on two Python projects,
+each project has different requirements:
 
-* Some version of Python, and
-* Python packages for this version
-
-Note that, in this context, a Python "package"
-is a bundle of software to be installed.
-Python libraries such as `numpy`
-are distributed as packages;
-and the first step towards using these libraries
-is to install the corresponding packages.
-
-Many users face problems with Python package management
-on the Palmetto cluster, and for several reasons such as:
-
-1. Many setup instructions for different packages
-assume "root" or administrative access.
-
-2. Many packages have several dependencies that
-may be difficult to install.
-
-3. Users may run several versions of Python:
-    * the built-in Python (version 2.6.6)
-    * using the Python modules (version 2.7 and 3.4)
-    * using the Anaconda modules (version 2.7 and 3.5)
-
-..and may find it difficult to install and manage
-packages across all these different Python versions.
+<img src="img/python-envs.eps" width=200px">
 
 This article will aim to explain
 
@@ -59,12 +35,12 @@ This article will aim to explain
 (and automatically install their dependencies),
 
 - how to leverage Python distributions like "Anaconda"
-which come with several importand Python packages
+which come with several important Python packages
 pre-installed, thus removing the burden of manually installing them.
 
 - how to use the `conda` package manager to easily create
 isolated Python installations - each with its own version
-of Python, and its own set of libraries.
+of Python, and its own set of packages.
 This is the most reliable and efficient way to manage
 Python installations,
 and users are encouraged to adopt this approach.
@@ -211,14 +187,13 @@ which will be discussed later in this article.
 While the provided Python and Anaconda modules
 have several important Python packages installed and ready
 for importing,
-you will often find that you may need to install addditional packages,
+you will often find that you may need to install additional packages,
 or different versions of already available packages.
 How you install a Python package depends
 on how the package is distributed,
 and what options it provides for installation.
 
-A large number
-packages can be installed in one of the following ways
+A large number of packages can be installed in one of the following ways
 on the Palmetto cluster:
 
 1. Using the `pip` package manager to install/upgrade the package and its dependencies automatically
@@ -281,7 +256,7 @@ you may need to build the package for yourself.
 
 In general,
 dependencies are *not* automatically installed
-when you manually build a pacakge.
+when you manually build a package.
 Thus, you may need to ensure that the dependencies
 are available before attempting to build a package.
 
@@ -304,7 +279,7 @@ for the currently running version of Python.
 `conda` is a package manager similar to `pip`,
 but with two major improvements over `pip`:
 
-1. `conda` also installs non-Python packages and dependencies
+1. `conda` also installs non:-Python packages and dependencies
 such as `gcc`, MKL, or HDF5.
 
 2. `conda` also serves 
