@@ -34,7 +34,7 @@ As an example,
 consider the scenario of a user working on two Python projects,
 each project has different requirements:
 
-<img src="img/python-envs.png" width=600px">
+<img src="img/python-envs.png" width=400px">
 
 The first project requires
 Python 2.7 and a set of Python packages such as `numpy`.
@@ -373,7 +373,7 @@ see the official `conda` documentation [here][conda-docs].
 Looking back at our example problem
 of having multiple projects with deferent requirements:
 
-<img src="img/python-envs.png" width=600px">
+<img src="img/python-envs.png" width=400px">
 
 We see that it is simple to
 set up a separate `conda` environment for each project,
