@@ -65,7 +65,7 @@ is **2.6.6**. This is the version of Python that
 ships with the operating system running on Palmetto
 (currently Scientific Linux release 6.7).
 
-```shell
+```bash
 $ module list
 No Modulefiles Currently Loaded.
 
@@ -95,7 +95,7 @@ In addition to the default system Python,
 the Palmetto cluster enables users to
 load different versions of Python as modules:
 
-```shell
+```bash
 $ module avail python
 
 ------------------------- /software/modulefiles -------------------------
@@ -105,7 +105,7 @@ python/2.7.6 python/3.3.3 python/3.4
 Any of these modules can be loaded
 to use a different version of Python than 2.6.6:
 
-```shell
+```bash
 $ module add python/3.4
 
 $ python --version
@@ -119,7 +119,7 @@ $ which python
 
 There are also several "Anaconda" modules available on the cluster.
 
-```shell
+```bash
 $ module avail anaconda
 anaconda/1.9.1  anaconda/2.3.0  anaconda/2.4.0  anaconda/2.5.0  anaconda/4.0.0  anaconda3/2.5.0 anaconda3/4.0.0
 
@@ -144,7 +144,7 @@ of manually installing these packages from source.
 Once the Anaconda module is loaded,
 importing these packages "just works":
 
-```shell
+```bash
 $ module add anaconda3/2.5.0
 $ python
 Python 3.5.2 |Anaconda 2.5.0 (64-bit)| (default, Jul  2 2016, 17:53:06)
@@ -206,7 +206,7 @@ and each one may be installed in any of the above ways.
 and automatically installs any other Python packages
 that are dependencies:
 
-```shell
+```bash
 $ pip install package-name --user
 ```
 
@@ -230,7 +230,7 @@ a part of the package's documentation.
 For example, see the instructions to manually install the `mpi4py` package
 [here][mpi4py-install]. Importantly, notice the last step:
 
-```shell
+```bash
 python setup.py install --user
 ```
 
@@ -259,26 +259,122 @@ A `conda` environment is a directory
 containing a specific version of Python
 and a collection of packages for this version of Python.
 
+`conda` is available as part of any of the `anconda` modules.
+
 ### Creating an environment
 
 You can create a `conda` environment using the
 `conda create` command, and specify
 what version of Python to install in this environment:
 
-```shell
+```bash
+$ module add anaconda3/2.5.0
+$ conda create -n my_env python=3.5
+```
 
+Once an environment is created,
+you can "enter", or "activate" it using the following command:
+
+```bash
+$ source activate my_env
+```
+
+You will now be running the environment's Python:
+
+```bash
+(my_env) $ python --version
+Python 3.5.2 :: Continuum Analytics, Inc.
+
+(my_env) $ which python
+~/.conda/envs/my_env/bin/python
+```
+
+You can "exit" or "deactivate" the environment using the following command:
+
+```bash
+(my_env) $ source deactivate
+$ 
 ```
 
 ### Installing packages in an environment
 
-* Using conda install
-* Using pip
-* By building it
+From within an environment,
+any packages you install will be available only
+within that environment.
+
+#### Using `conda install`
+
+The `conda install` command
+can be used to download many
+packages popularly used in scientific computing and data analysis.
+A full list of packages is maintained [here][anaconda-pkg-list].
+For example:
+
+```bash
+(my_env) $ conda install numpy
+```
+
+You can even install a specific version:
+
+```bash
+(my_env) $ conda install numpy=1.11
+```
+
+#### Using `pip`
+
+You can still use `pip` to install packages;
+but you don't need the `--user` switch;
+`pip` will automatically install into the environment's directory.
+
+```bash
+(my_env) $ pip install package-name
+```
+
+#### By building it yourself:
+
+You can still build packages manually,
+but you don't need the `--user` switch
+when running `python setup.py`.
+`pip` will automatically install into the environment's directory.
 
 ### Cloning an existing environment
 
+When you load any of the `anaconda` modules,
+the default `conda` environment is the `root` environment.
+Although you can use all the packages that are part
+of this environment,
+you do not have permissions to install any packages
+into this environment.
 
+You can however, create your own personal "clone"
+of the `root` environment, as follows:
+
+```bash
+$ conda create -n my_root --clone=/software/anaconda3/2.5.0
+```
+
+### `conda` documentation
+
+For more information about the `conda` package manager,
+and for more advanced package management,
+see the official `conda` documentation [here][conda-docs].
+
+### Using `conda` environments per-project
+
+Looking back at our example problem
+of having multiple projects with deferent requirements:
+
+<img src="img/python-envs.png" width=600px">
+
+We see that it is simple to
+set up a separate `conda` environment for each project,
+and install the specific versions of packages required.
+Within each environment,
+we can use `pip` or `conda` to install the packages,
+or build them ourselves.
 
 [mpi4py-install]: https://mpi4py.scipy.org/docs/usrman/install.html
 [python-packaging-science]: https://packaging.python.org/science/
 [anaconda-overview]: https://www.continuum.io/anaconda-overview
+[anaconda-pkg-list]: https://docs.continuum.io/anaconda/pkg-docs
+[conda-docs]: http://conda.pydata.org/docs/
