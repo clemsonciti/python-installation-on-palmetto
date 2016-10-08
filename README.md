@@ -27,7 +27,7 @@ As an example,
 consider the scenario of a user working on two Python projects,
 each project has different requirements:
 
-<img src="img/python-envs.eps" width=200px">
+<img src="img/python-envs.png" width=200px">
 
 This article will aim to explain
 
