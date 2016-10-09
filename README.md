@@ -344,7 +344,7 @@ but you don't need the `--user` switch;
 You can still build packages manually,
 but you don't need the `--user` switch
 when running `python setup.py`.
-`pip` will automatically install into the environment's directory.
+The package will automatically be installed into the environment's directory.
 
 ### Cloning an existing environment
 
