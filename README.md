@@ -87,7 +87,7 @@ it is highly recommended that users
 **not** rely on this version of Python to
 run their own applications:
 
-1. Libraries that they use may require other versions
+1. Packages that they use may require other versions
 of Python (generally, 2.7 or higher).
 
 2. The system version of Python may change.
